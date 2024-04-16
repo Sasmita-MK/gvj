@@ -35,6 +35,11 @@ public class AppTest
         Thread.sleep(1000);
         driver.findElement(By.linkText("Cart")).click();
         Thread.sleep(5000);
+        String title = driver.findElement(By.xpath("//*[@id='tbodyid']/tr[1]/td[2]")).getText();
+        System.out.println(title);
+        String price = driver.findElement(By.xpath("//*[@id='tbodyid']/tr[1]/td[3]")).getText();
+        System.out.println(price);
+        Thread.sleep(2000);
         driver.quit();
     }
 }
