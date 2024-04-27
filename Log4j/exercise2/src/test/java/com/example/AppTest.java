@@ -22,7 +22,6 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -91,10 +90,11 @@ public class AppTest
         }
         Select time = new Select(driver.findElement(By.xpath("//*[@id=\"restProfileSideBartimePickerDtpPicker\"]")));
         time.selectByVisibleText("6:30 PM");
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"mainContent\"]/div/div[2]/div[2]/div/article/div/div[5]/button")).click();
         log.info("Make a reservation section has been completed");
         driver.findElement(By.xpath("//*[@id=\"baseApp\"]/div/header/div[2]/div[2]/div[1]/button")).click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         TakesScreenshot screenshot1 = (TakesScreenshot) driver;
         File source1 = screenshot1.getScreenshotAs(OutputType.FILE);
         String path1 = "C:\\Users\\91701\\Desktop\\it sckcet\\softwareTesting-1\\Log4j\\exercise2\\signin.png";
