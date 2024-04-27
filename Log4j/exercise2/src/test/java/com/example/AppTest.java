@@ -79,14 +79,11 @@ public class AppTest
         partySize.selectByIndex(3);
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"restProfileSideBarDtpDayPicker\"]/div/div/span")).click();
-        Thread.sleep(1000);
+        Thread.sleep(4000);
         while(true) {
-            String curr = driver.findElement(By.xpath("//*[@id=\"react-day-picker-1\"]")).getText();
+            String curr = driver.findElement(By.xpath("//*[@id=\"restProfileSideBarDtpDayPicker-wrapper\"]/div/div/div/div")).getText();
             System.out.println(curr);
-            String s[] = curr.split(" ");
-            String currMonth = s[0];
-            String currYear = s[1];
-            if(currMonth.equals("November") && currYear.equals("2024")) {
+            if(curr.equals("November 2024")) {
                 driver.findElement(By.xpath("//*[@id=\"restProfileSideBarDtpDayPicker-wrapper\"]/div/div/div/table/tbody/tr[3]/td[2]/button")).click();
                 break;
             }
@@ -103,8 +100,8 @@ public class AppTest
         String path1 = "C:\\Users\\91701\\Desktop\\it sckcet\\softwareTesting-1\\Log4j\\exercise2\\signin.png";
         FileUtils.copyFile(source1,new File(path1));
     }
-    /*@AfterTest
+    @AfterTest
     public void quit() {
         driver.quit();
-    }*/
+    }
 }
